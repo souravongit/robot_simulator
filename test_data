@@ -8,6 +8,7 @@ command.execute("LEFT")
 command.execute("MOVE")
 command.execute("REPORT")
 
+Output: 3,3,NORTH
 
 robot = Robot.new
 table = Table.new({length: 5, width: 5})
