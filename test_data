@@ -1,0 +1,29 @@
+robot = Robot.new
+table = Table.new({length: 5, width: 5})
+command = Command.new({robot: robot, table: table})
+command.execute("PLACE 1,2,EAST")
+command.execute("MOVE")
+command.execute("MOVE")
+command.execute("LEFT")
+command.execute("MOVE")
+command.execute("REPORT")
+
+
+robot = Robot.new
+table = Table.new({length: 5, width: 5})
+command = Command.new({robot: robot, table: table})
+command.execute("PLACE 0,0,NORTH")
+command.execute("MOVE")
+command.execute("REPORT")
+
+Output: 0,1,NORTH
+
+
+robot = Robot.new
+table = Table.new({length: 5, width: 5})
+command = Command.new({robot: robot, table: table})
+command.execute("PLACE 0,0,NORTH")
+command.execute("LEFT")
+command.execute("REPORT")
+
+Output: 0,0,WEST
