@@ -5,10 +5,12 @@ class Robot
     self.current_position = nil
   end
 
+  # Check if robot is placed on the table 
   def placed?
     !current_position.nil?
   end
 
+  # Place the robot with valid position on the table
   def place(table, position)
     if table.is_valid_position?(position)
       self.current_position = position 
@@ -17,6 +19,7 @@ class Robot
     end
   end
 
+  # Change robot direction to right without moving from current position
   def right
     if placed?
       self.current_position = Position.new({x: current_position.x,
@@ -27,6 +30,7 @@ class Robot
     end
   end
 
+  # Change robot direction to left without moving from current position
   def left
     if placed?
       self.current_position = Position.new({x: current_position.x,
@@ -37,6 +41,8 @@ class Robot
     end
   end
 
+  # Move robot one unit forword towards the current position direction
+  # Check whether position is a valid.
   def move(table)
     if placed?
       new_position = current_position.move_towards(current_position.direction)
@@ -50,6 +56,7 @@ class Robot
     end
   end
 
+  # Return current position as x, y, direction in comma seperated format
   def report
     if !placed?
       'Robot not placed!'
