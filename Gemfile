@@ -36,6 +36,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry-rails'
+  gem 'rspec-rails', '3.8.0'
 end
 
 group :development do
@@ -46,3 +47,8 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.1.2'
+  gem 'rspec_junit_formatter', '0.4.1'
+  gem 'simplecov', '0.16.1'
+end
